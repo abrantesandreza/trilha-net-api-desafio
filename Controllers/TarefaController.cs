@@ -30,7 +30,6 @@ namespace TrilhaApiDesafio.Controllers
         public IActionResult ObterTodos()
         {
             var tarefas = _context.Tarefas.ToList();
-
             return Ok(tarefas);
         }
 
@@ -38,7 +37,6 @@ namespace TrilhaApiDesafio.Controllers
         public IActionResult ObterPorTitulo(string titulo)
         {
             var tituloBanco = _context.Tarefas.Where(x => x.Titulo == titulo);
-
             return Ok(tituloBanco);
         }
 
@@ -85,7 +83,6 @@ namespace TrilhaApiDesafio.Controllers
 
             _context.Tarefas.Update(tarefaBanco);
             _context.SaveChanges();
-            
             
             return Ok(tarefaBanco);
         }
